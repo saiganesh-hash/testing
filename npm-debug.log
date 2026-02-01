@@ -1,0 +1,30 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install'
+1 verbose cli ]
+2 info using npm@1.4.9
+3 info using node@v24.13.0
+4 error Error: crypto binding not found.
+4 error Please build node with openssl.
+4 error No such module: crypto
+4 error     at Object.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\sha\index.js:14:12)
+4 error     at Module._compile (node:internal/modules/cjs/loader:1761:14)
+4 error     at Object..js (node:internal/modules/cjs/loader:1893:10)
+4 error     at Module.load (node:internal/modules/cjs/loader:1481:32)
+4 error     at Module._load (node:internal/modules/cjs/loader:1300:12)
+4 error     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+4 error     at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+4 error     at Module.require (node:internal/modules/cjs/loader:1504:12)
+4 error     at require (node:internal/modules/helpers:152:16)
+4 error     at Object.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\cache.js:72:11)
+5 error If you need help, you may report this *entire* log,
+5 error including the npm and node versions, at:
+5 error     <http://github.com/npm/npm/issues>
+6 error System Windows_NT 10.0.22631
+7 error command "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+8 error cwd C:\Users\hsena\OneDrive\Documents\express-test
+9 error node -v v24.13.0
+10 error npm -v 1.4.9
+11 verbose exit [ 1, true ]

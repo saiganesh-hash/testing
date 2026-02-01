@@ -6,13 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const healthUptime = document.getElementById('health-uptime');
     const healthEnv = document.getElementById('health-env');
     const apiOutput = document.getElementById('api-output');
+    const API_BASE_URL = 'http://localhost:3000';
 
     async function fetchHealth() {
         statusBadge.innerText = 'Loading...';
         statusBadge.className = 'badge loading';
 
         try {
-            const response = await fetch('/health');
+            const response = await fetch(`${API_BASE_URL}/health`);
             const data = await response.json();
 
             if (data.status === 'UP') {
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function testApi() {
         apiOutput.innerText = 'Testing...';
         try {
-            const response = await fetch('/api/v1/status');
+            const response = await fetch(`${API_BASE_URL}/api/v1/status`);
             const data = await response.json();
             apiOutput.innerText = JSON.stringify(data, null, 2);
         } catch (error) {

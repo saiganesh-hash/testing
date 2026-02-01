@@ -11,13 +11,21 @@ const notFound = require('./middleware/notFound');
 const app = express();
 
 // Security and utility middleware
-app.use(helmet());
-app.use(cors());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+            "connect-src": ["'self'", "http://localhost:3000", "https://saiganesh-hash.github.io"],
+        },
+    },
+}));
+app.use(cors({
+    origin: ['https://saiganesh-hash.github.io', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true
+}));
 app.use(morgan('dev'));
 app.use(express.json());
-
-// Static assets
-app.use(express.static(path.join(__dirname, '../docs')));
 
 // Health Check (Root level)
 app.get('/health', getHealth);
