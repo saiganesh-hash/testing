@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Static assets
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../docs')));
 
 // Health Check (Root level)
 app.get('/health', getHealth);
